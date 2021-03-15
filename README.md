@@ -138,3 +138,43 @@ int main()
     printf("n[0]:%d n[1]:%d n[2]:%d\n", n[0], n[1], n[2]);
 }
 ```
+第三週
+## 指標陣列1
+```C
+#include <stdio.h>
+int main()
+{
+    int a[5]={0,10,20,30,40};
+    int *p=&a[2];
+    *p=222;
+    p+=2;
+    *p=666;
+    p--;
+    *p=555;
+}
+```
+## 指標陣列2
+```c
+#include <stdio.h>
+int main()
+{
+    int a[10]={0,10,20,30,40,50,60,70,80,90};
+    int *p=&a[2];///宣告要有*
+    *p=222;///使用丟值要有*
+    int *p2=p+4;
+    *p2=666;
+    p2--;///更改位址不用*
+    *p2=555;
+}
+```
+## 指標陣列3
+```C
+#include <stdio.h>
+#include <stdlib.h>
+int a[5];
+int main()
+{
+  int a[5];
+  int *p=(int*)malloc(sizeof(int)*5);
+}
+```
