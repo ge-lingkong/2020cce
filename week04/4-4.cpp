@@ -2,10 +2,10 @@
 struct DATA{
     float x,y,z;
 }a,b,c;
-struct DATA points[5];///¥ş°ìÅÜ¼Æ¦³ªì©l­È0
+struct DATA points[5];///å…¨åŸŸè®Šæ•¸æœ‰åˆå§‹å€¼0
 int main()
 {
-    struct DATA d,e,f;///°Ï°ìÅÜ¼ÆµLªì©l­È
+    struct DATA d,e,f;///å€åŸŸè®Šæ•¸ç„¡åˆå§‹å€¼
     for(int i=0;i<5;i++)
     {
         points[i].x=i*10;
