@@ -260,3 +260,83 @@ int main()
     printf("%f %f %f\n", f.x, f.y, f.z);
 }
 ```
+第五週
+##字串1
+```C
+#include <stdio.h>
+int main()
+{
+    char a[20]="233233233233233233";
+    for(int i=0;a[i];i++)
+        if(a[i]!='2')
+            printf("%c", a[i]);
+    printf("\n");
+}
+```
+##字串2
+```C
+#include <stdio.h>
+int main()
+{
+    char a[10]="decline",b[10]={'p','r','o','p','e','r','\0'};
+    printf("%s\n%s\n", a, b);
+}
+```
+##字串3
+```C
+#include <stdio.h>
+int main()
+{
+    char a[10]="decline",b[10]={'p','r','o','p','e','r','\0'};
+    printf("%s\n%s\n", a, b);
+    char c[]="majority它在雙引號裡宣告會自動補零",d[]={'m','a','j','o','r','i','t','y'};
+    printf("%s\n壞掉的d:%s\n", c, d);
+}
+```
+##字串4
+```C
+#include <stdio.h>
+int main()
+{
+    char a[5][10]={"decline","proper","majority","bullet","shop"};
+    for(int i=0;i<5;i++)
+        printf("%s\n", a[i]);
+}
+```
+##數字排序
+```C
+#include <stdio.h>
+int main()
+{
+    int a[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+            printf("%d ", a[i][j]);
+        printf("\n");
+    }
+}
+```
+##字串排序
+```C
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	int a;
+	scanf("%d", &a);
+	char b[100][10],t[10];
+	for(int i=0;i<a;i++)
+		scanf("%s", b[i]);
+	for(int i=0;i<a;i++)
+		for(int j=i+1;j<a;j++)
+			if(strcmp(b[i],b[j])>0)
+			{
+				strcpy(t, b[i]);
+				strcpy(b[i], b[j]);
+				strcpy(b[j], t);
+			}
+	for(int i=0;i<a;i++)
+		printf("%s\n", b[i]);
+}
+```
