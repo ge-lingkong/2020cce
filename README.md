@@ -261,7 +261,7 @@ int main()
 }
 ```
 第五週
-##字串1
+## 字串1
 ```C
 #include <stdio.h>
 int main()
@@ -273,7 +273,7 @@ int main()
     printf("\n");
 }
 ```
-##字串2
+## 字串2
 ```C
 #include <stdio.h>
 int main()
@@ -282,7 +282,7 @@ int main()
     printf("%s\n%s\n", a, b);
 }
 ```
-##字串3
+## 字串3
 ```C
 #include <stdio.h>
 int main()
@@ -293,7 +293,7 @@ int main()
     printf("%s\n壞掉的d:%s\n", c, d);
 }
 ```
-##字串4
+## 字串4
 ```C
 #include <stdio.h>
 int main()
@@ -303,7 +303,7 @@ int main()
         printf("%s\n", a[i]);
 }
 ```
-##數字排序
+## 數字排序
 ```C
 #include <stdio.h>
 int main()
@@ -317,7 +317,7 @@ int main()
     }
 }
 ```
-##字串排序
+## 字串排序
 ```C
 #include <stdio.h>
 #include <string.h>
