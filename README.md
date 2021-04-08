@@ -340,3 +340,59 @@ int main()
 		printf("%s\n", b[i]);
 }
 ```
+第七週
+## 快速排序
+```C
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int compare(const void *p1, const void *p2)
+{
+	char *s1=(char*)p1;
+	char *s2=(char*)p2;
+	return strcmp(s1,s2);
+}
+int main()
+{
+	int a;
+	scanf("%d", &a);
+	char b[100][10];
+	for(int i=0;i<a;i++)
+		scanf("%s", b[i]);
+	qsort(b,a,10,compare);
+	for(int i=0;i<a;i++)
+		printf("%s\n", b[i]);
+}
+```
+## uva10420
+```C
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int compare(const void *p1, const void *p2)
+{
+	return strcmp((char*)p1,(char*)p2);
+}
+int main()
+{
+	int a,d=1;
+	char b[2000][76],others[76];
+	scanf("%d", &a);
+	for(int i=0;i<a;i++)
+	{
+		scanf("%s", b[i]);
+		gets(others);
+	}
+	qsort(b,a,76,compare);
+	for(int i=0;i<a;i++)
+	{
+		if(strcmp(b[i],b[i+1])==0)
+			d++;
+		else
+		{
+			printf("%s %d\n", b[i], d);
+			d=1;
+		}
+	}
+}
+```
