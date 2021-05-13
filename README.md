@@ -536,3 +536,114 @@ int main()
         printf("%d ", a[i]);
 }
 ```
+第十二週
+## uva10062
+```C
+#include <stdio.h>
+int main()
+{
+	char a[1001],c[128],t1;
+	for(int i=0;gets(a);i++)
+	{
+		int b[128]={},t;
+		for(int j=0;j<128;j++)
+			c[j]=j;
+		if(i)
+			printf("\n");
+		for(int j=0;a[j];j++)
+			b[a[j]]++;
+		for(int j=0;j<128;j++)
+			for(int k=j+1;k<128;k++)
+			{
+				if(b[j]>b[k])
+				{
+					t=b[j];
+					b[j]=b[k];
+					b[k]=t;
+					t1=c[j];
+					c[j]=c[k];
+					c[k]=t1;
+				}
+				if(b[j]==b[k] && c[j]<c[k])
+				{
+					t1=c[j];
+					c[j]=c[k];
+					c[k]=t1;
+				}
+			}
+		for(int j=0;j<128;j++)
+			if(b[j])
+				printf("%d %d\n", c[j], b[j]);
+	}
+}
+```
+## uva299
+```C
+#include <stdio.h>
+int main()
+{
+	int a,b;
+	scanf("%d", &a);
+	for(int i=0;i<a;i++)
+	{
+		int c[50]={},d=0,t;
+		scanf("%d", &b);
+		for(int j=0;j<b;j++)
+			scanf("%d", &c[j]);
+		for(int j=0;j<b-1;j++)
+			for(int k=0;k<b-1;k++)
+				if(c[k]>c[k+1])
+				{
+					t=c[k];
+					c[k]=c[k+1];
+					c[k+1]=t;
+					d++;
+				}
+		printf("Optimal train swapping takes %d swaps.\n", d);
+	}
+}
+```
+## uva11321
+```C
+#include <stdio.h>
+int main()
+{
+	int N,M,a[10001]={},t;
+	while(scanf("%d%d", &N, &M)==2)
+	{
+		for(int i=0;i<N;i++)
+			scanf("%d", &a[i]);
+		for(int i=0;i<N;i++)
+			for(int j=i+1;j<N;j++)
+			{
+				if(a[i]%M>a[j]%M)
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+				else if(a[i]%M==a[j]%M && a[i]%2==0 && a[j]%2)
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+				else if(a[i]%M==a[j]%M && a[i]%2 && a[j]%2 && a[i]<a[j])
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+				else if(a[i]%M==a[j]%M && a[i]%2==0 && a[j]%2==0 && a[i]>a[j])
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+			}
+		printf("%d %d\n", N, M);
+		for(int i=0;i<N;i++)
+			printf("%d\n", a[i]);
+	}
+}
+```
