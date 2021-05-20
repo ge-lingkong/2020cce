@@ -640,7 +640,7 @@ int main()
 ```
 第十三週
 ## 點擊次數
-```C
+```Java
 void setup(){
   size(1024, 400);
 }
@@ -658,7 +658,7 @@ void mousePressed(){//每點一次a+1
 }
 ```
 ## 倒計時
-```C
+```Java
 void setup(){
   size(800,400);
   textFont(createFont("標楷體", 64));//(字型,大小)
