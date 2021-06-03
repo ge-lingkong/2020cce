@@ -752,3 +752,52 @@ void mousePressed(){
   }
 }
 ```
+第十五週
+## 每秒換色
+```C
+void setup(){
+  size(400,200);
+}
+void draw(){
+  int s=second();
+  if(s%2==0)
+    background(255,0,0);
+  else
+    background(58,114,191);
+}
+```
+## 每10秒叫一次tada
+```C
+import processing.sound.*;
+SoundFile player;
+void setup(){
+  size(400,200);
+  textSize(40);
+  player=new SoundFile(this, "tada.mp3");
+}
+void draw(){
+  int s=second();
+  background(58,114,191);
+  text(10-s%11, 100,100);
+  if(10-s%11==0 && !player.isPlaying())
+    player.play();
+}
+```
+## 按一下播放/停止音樂
+```C
+import processing.sound.*;
+SoundFile player;
+void setup(){
+  size(400,200);
+  player=new SoundFile(this, "bell.mp3");
+}
+void draw(){
+  background(51,114,191);
+}
+void mousePressed(){
+  if(player.isPlaying())
+    player.stop();
+  else
+    player.play();
+}
+```
